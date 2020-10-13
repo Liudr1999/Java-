@@ -3,113 +3,17 @@ Java课程作业项目仓库
 
 # 阅读程序
 ## 程序源代码
-### CPU.java
+### CPU类
 ```
-package pack1;
-
-public class CPU {
-	private int speed;
-	private int slot;
-	public CPU(){
-	}
-	public CPU(int speed,int slot){
-		this.speed=speed;
-		this.slot=slot;
-	}
-	protected void setSpeed(int m){				//方法
-		this.speed=m;
-	}
-	public int getSpeed(){
-		return speed;
-	}
-	public void setSlots(int s){
-		slot=s;
-	}
-	public int getSlots(){
-		return slot;
-	}
-}
+	private int speed;      //私有属性speed
+	private int slot;	//私有属性slot
 ```
-### PC.java
-```
-package pack;
+### PC类
 
-import pack1.CPU;
+### HardDisk类
 
-public class PC {
-	public PC(){
-	}
-	public PC(CPU cpu,HardDisk HD){
-		this.cpu=cpu;
-		this.HD=HD;
-		
-	}
-	private CPU cpu;
-	public HardDisk HD;
-	public void setCPU(CPU c){
-		cpu=c;
-	}
-	public void setHardDisk(HardDisk h){
-		HD=h;
-	}
-	void show(){
-		System.out.println("CPU的速度是"+cpu.getSpeed()+",CPU的信槽为"+cpu.getSlots());
-		System.out.println("硬盘的容量是"+HD.getAmount()+",硬盘的转速为"+HD.getRotate()+"r每分钟");
-	}
-}
-```
-### HardDisk.java
-```
-package pack;
+### Test类
 
-
-public class HardDisk {
-	int amount;
-	int rotate;
-	public HardDisk(){
-	}
-	public HardDisk(int amount,int rotate){
-		this.amount=amount;
-		this.rotate=rotate;
-		
-	}
-	public void setAmount(int m){		//方法
-		amount=m;				
-	}
-	int getAmount(){			//方法
-		return amount;			//返回int型amount
-	}
-	public void setRotate(int n){		
-		rotate=n;				
-	}
-	int getRotate(){			
-		return rotate;			
-	}
-}
-
-```
-### Test.java:
-```
-package pack;
-
-import cs.CPU;
-
-public class Test {
-	public static void main(String args[]){
-		CPU cpu=new CPU();		//CPU对象
-  	cpu.setSpeed(2200);
-		cpu.setSlots(1155);
-		HardDisk HD=new HardDisk();
-		HD.setAmount(200);
-		HD.setRotate(7200);
-		PC pc=new PC();
-		pc.setCPU(cpu);
-		pc.setHardDisk(HD);
-		pc.show();
-	}
-}
-
-```
 ## 实验目的
 
 ## 实验过程
@@ -118,7 +22,10 @@ public class Test {
 
 
 ## 实验结果
-
+```
+CPU的速度是2200,CPU的信槽为1155
+硬盘的容量是200,硬盘的转速为7200r每分钟
+```
 ## 实验感想
 通过本次实验，发现了很多以前从来没有注意过的问题，我对于Java的基本参数还是不太了解和熟悉。需要查书及其他资料来确定是什么。
 对我来说最大的困难是构造方法的设定，除了知道构造方法的形式（包括空的），其他带有参数的构造方法不会设置。
