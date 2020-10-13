@@ -8,7 +8,7 @@ Java课程作业项目仓库
 	private int speed;      
 	private int slot;	
 ```
-定义了两个私有属性speed、slot.
+定义了两个整型的私有属性speed、slot。
 ```
 	public void setSpeed(int m){				
 		this.speed=m;
@@ -17,14 +17,59 @@ Java课程作业项目仓库
 		return speed;
 	}
 ```
-定义了两个对应的方法，其中setSpeed()将参数m的值赋给speed，getSpeed()方法中输出speed的值。
+定义了两个对应的方法，其中setSpeed()方法将参数m的值赋给speed，getSpeed()方法中返回speed的值。
 同理定义setSlots(int n)和getSlots()方法，均是public类。
 ### PC类
-
+```
+import pack1.CPU;
+```
+调用pack1包内的CPU类。
+```
+	public void setCPU(CPU c){
+		cpu=c;
+	}
+	public void setHardDisk(HardDisk h){
+		HD=h;
+	}
+	void show(){
+		System.out.println("CPU的速度是"+cpu.getSpeed()+",CPU的信槽为"+cpu.getSlots());
+		System.out.println("硬盘的容量是"+HD.getAmount()+",硬盘的转速为"+HD.getRotate()+"r每分钟");
+	}
+```
+其中setCPU(CPU c)将参数c的值赋给cpu，setHardDisk(HardDisk h)方法中将参数h的值赋给HD。
+另外定义一个返回值为空的方法show()，分别输出CPU和硬盘的相应参数（之前定义的）。
 ### HardDisk类
-
+```
+	public HardDisk(){
+	}
+	public HardDisk(int amount,int rotate){
+		this.amount=amount;
+		this.rotate=rotate;
+	}
+```
+定义了两个构造方法，一个是带参数的一个是不带参数的。（其他类也有此项，并且amount和rotate属性已提前定义。）
+在HardDisk类中getAmount()方法返回amount的值，setAmount(int m)方法将参数m的值赋给amount。
+rotate属性的相应方法同理，setRotate(int n)方法是将参数n的值赋予rotate。
 ### Test类
-
+```
+		CPU cpu=new CPU();		
+		cpu.setSpeed(2200);
+		cpu.setSlots(1155);
+```
+使用new关键字，对CPU类里面的cpu对象进行实例化，调用cpu的setSpeed()和setSlots()方法并进行赋值.
+```
+		HardDisk HD=new HardDisk();
+		HD.setAmount(200);
+		HD.setRotate(7200);
+```
+同理使用new关键字对HD进行对象实例化，并调用相应的方法进行赋值。
+```
+		PC pc=new PC();
+		pc.setCPU(cpu);
+		pc.setHardDisk(HD);
+		pc.show();
+```
+将cpu的值代入pc.setCPU()中，将HD的值代入pc.setHardDisk()中并进行调用，最后调用pc.show()方法。
 ## 实验目的
 
 ## 实验过程
