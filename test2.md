@@ -10,7 +10,7 @@ Java课程作业项目仓库
 ```
 定义了两个整型的私有属性speed、slot。
 ```
-	public void setSpeed(int m){				
+	protected void setSpeed(int m){				
 		this.speed=m;
 	}
 	public int getSpeed(){
@@ -37,7 +37,7 @@ import pack1.CPU;
 	}
 ```
 其中setCPU(CPU c)将参数c的值赋给cpu，setHardDisk(HardDisk h)方法中将参数h的值赋给HD。
-另外定义一个返回值为空的方法show()，分别输出CPU和硬盘的相应参数（之前定义的）。
+另外定义一个返回值为空的方法show()，分别显示CPU和硬盘的相应参数（之前定义的）。
 ### HardDisk类
 ```
 	public HardDisk(){
@@ -71,12 +71,41 @@ rotate属性的相应方法同理，setRotate(int n)方法是将参数n的值赋
 ```
 将cpu的值代入pc.setCPU()中，将HD的值代入pc.setHardDisk()中并进行调用，最后调用pc.show()方法。
 ## 实验目的
-
+1、熟悉并掌握Java的基本语法结构；
+2、熟悉并掌握Java的构造方法；
+3、尝试对属性进行多样化的定义；
+3、尝试并体会修饰符的多样化应用。
 ## 实验过程
-
+1、分别创建CPU、PC、HardDisk、Test类；
+2、按照实验要求对每一个类分别进行定义；
+3、经检查无误后，执行程序；
+4、为在原程序的基础上书写附加要求；
+5、检查是否符合实验要求，实验结束；
 ## 核心方法
-
-
+1、构造方法的设定
+```
+	public PC(){
+	}
+	public PC(CPU cpu,HardDisk HD){
+		this.cpu=cpu;
+		this.HD=HD;
+		
+	}
+```
+构造方法没有返回值类型，如果不定义修饰符类型系统将用default定义。若类里没有构造方法，则程序运行时自动添加构造方法。
+2、修饰符的不同定义
+```
+	private CPU cpu;
+	public HardDisk HD;
+	
+```
+private代表仅同一类的成员可见，public代表公开，任何人可见。
+```
+	protected void setSpeed(int m){				
+		this.speed=m;
+	}
+```
+protected除了不同包中非子类不可见，其他均可。
 ## 实验结果
 ```
 CPU的速度是2200,CPU的信槽为1155
