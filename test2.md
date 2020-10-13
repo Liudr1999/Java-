@@ -5,9 +5,20 @@ Java课程作业项目仓库
 ## 程序源代码
 ### CPU类
 ```
-	private int speed;      //私有属性speed
-	private int slot;	//私有属性slot
+	private int speed;      
+	private int slot;	
 ```
+定义了两个私有属性speed、slot.
+```
+	public void setSpeed(int m){				
+		this.speed=m;
+	}
+	public int getSpeed(){
+		return speed;
+	}
+```
+定义了两个对应的方法，其中setSpeed()将参数m的值赋给speed，getSpeed()方法中输出speed的值。
+同理定义setSlots(int n)和getSlots()方法，均是public类。
 ### PC类
 
 ### HardDisk类
